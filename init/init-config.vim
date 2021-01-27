@@ -85,6 +85,7 @@ if &term =~ '256color' && $TMUX != ''
 	set t_ut=
 endif
 
+set hidden
 
 "----------------------------------------------------------------------
 " 备份设置
@@ -120,16 +121,16 @@ silent! call mkdir(expand('~/.vim/tmp'), "p", 0755)
 " 终端控制命令，比如 cursor shaping 这类更改光标形状的 xterm 终端命令
 " 会令一些支持 xterm 不完全的终端解析错误，显示为错误的字符，比如 q 字符
 " 如果你确认你的终端支持，不会在一些不兼容的终端上运行该配置，可以注释
-if has('nvim')
-	set guicursor=
-elseif (!has('gui_running')) && has('terminal') && has('patch-8.0.1200')
-	let g:termcap_guicursor = &guicursor
-	let g:termcap_t_RS = &t_RS
-	let g:termcap_t_SH = &t_SH
-	set guicursor=
-	set t_RS=
-	set t_SH=
-endif
+" if has('nvim')
+" 	set guicursor=
+" elseif (!has('gui_running')) && has('terminal') && has('patch-8.0.1200')
+" 	let g:termcap_guicursor = &guicursor
+" 	let g:termcap_t_RS = &t_RS
+" 	let g:termcap_t_SH = &t_SH
+" 	set guicursor=
+" 	set t_RS=
+" 	set t_SH=
+" endif
 
 " 打开文件时恢复上一次光标所在位置
 autocmd BufReadPost *

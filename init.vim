@@ -14,6 +14,11 @@ else
 	let s:loaded = 1
 endif
 
+if has('nvim')
+    let g:python_host_prog = $HOME .'/.pyenv/versions/2.7.18/envs/neovim2/bin/python2'
+    let g:python3_host_prog = $HOME .'/.pyenv/versions/3.9.1/envs/neovim3/bin/python3'
+endif
+
 " 取得本文件所在的目录
 let s:home = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
@@ -26,6 +31,7 @@ exec 'set rtp+='.s:home
 " 将 ~/.vim 目录加入 runtimepath (有时候 vim 不会自动帮你加入）
 set rtp+=~/.vim
 
+let $GTAGSLABEL = 'native-pygments'
 
 "----------------------------------------------------------------------
 " 模块加载
@@ -49,5 +55,6 @@ LoadScript init/init-style.vim
 " 自定义按键
 LoadScript init/init-keymaps.vim
 
+let g:gruvbox_invert_selection=0
 
-
+colorschem gruvbox

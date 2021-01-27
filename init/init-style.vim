@@ -19,14 +19,17 @@ set laststatus=2
 " 总是显示行号
 set number
 
+" 总是显示相对行号
+set rnu
+
 " 总是显示侧边栏（用于显示 mark/gitdiff/诊断信息）
 set signcolumn=yes
 
 " 总是显示标签栏
-set showtabline=2
+" set showtabline=2
 
 " 设置显示制表符等隐藏字符
-set list
+" set list
 
 " 右下角显示命令
 set showcmd
@@ -37,6 +40,9 @@ set showcmd
 
 " 水平切割窗口时，默认在右边显示新窗口
 set splitright
+
+
+set colorcolumn=80
 
 
 "----------------------------------------------------------------------
