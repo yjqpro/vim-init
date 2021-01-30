@@ -72,6 +72,9 @@ set statusline+=\ %y                            " 文件类型
 set statusline+=\ %0(%{&fileformat}\ [%{(&fenc==\"\"?&enc:&fenc).(&bomb?\",BOM\":\"\")}]\ %v:%l/%L%)
 
 
+set guifont=FuraCodeNerdFontCompleteM-Regular:h14
+
+
 "----------------------------------------------------------------------
 " 更改样式
 "----------------------------------------------------------------------
