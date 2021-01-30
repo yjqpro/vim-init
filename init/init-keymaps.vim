@@ -231,7 +231,7 @@ nnoremap <silent> <F9> :AsyncRun gcc -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILED
 nnoremap <silent> <F5> :call ExecuteFile()<cr>
 
 " F7 编译项目
-nnoremap <silent> <F7> :AsyncRun -cwd=<root> make <cr>
+nnoremap <silent> <F7> :AsyncRun -cwd=<root> cmake --build .build <cr>
 
 " F8 运行项目
 nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
@@ -325,3 +325,6 @@ map <silent> <leader>/ :noh<cr>
 nmap <leader>w :w!<cr>
 
 nmap <leader>q :q!<cr>
+
+nnoremap <leader>\ <C-w>v
+nnoremap <leader>- <C-w>s
