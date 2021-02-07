@@ -58,3 +58,5 @@ LoadScript init/init-keymaps.vim
 let g:gruvbox_invert_selection=0
 
 colorschem gruvbox
+
+LoadScript init/ycm.vim

@@ -132,6 +132,12 @@ silent! call mkdir(expand('~/.vim/tmp'), "p", 0755)
 " 	set t_SH=
 " endif
 
+" Change cursor shape in different modes
+" Refer: https://vim.fandom.com/wiki/Change_cursor_shape_in_different_modes
+" let &t_SI.="\e[5 q" "SI = INSERT mode
+" let &t_SR.="\e[4 q" "SR = REPLACE mode
+" let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
 " 打开文件时恢复上一次光标所在位置
 autocmd BufReadPost *
 	\ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -172,12 +178,15 @@ augroup InitFileTypesGroup
 	" quickfix 隐藏行号
 	au FileType qf setlocal nonumber
 
+	au FileType yaml setlocal et ts=2 ai sw=2 sts=2
+
 	" 强制对某些扩展名的 filetype 进行纠正
 	au BufNewFile,BufRead *.as setlocal filetype=actionscript
 	au BufNewFile,BufRead *.pro setlocal filetype=prolog
 	au BufNewFile,BufRead *.es setlocal filetype=erlang
 	au BufNewFile,BufRead *.asc setlocal filetype=asciidoc
 	au BufNewFile,BufRead *.vl setlocal filetype=verilog
+	
 
 augroup END
 

@@ -23,7 +23,7 @@ let g:mapleader = "\<Space>"
 "----------------------------------------------------------------------
 inoremap <c-a> <home>
 inoremap <c-e> <end>
-inoremap <c-d> <del>
+"inoremap <c-d> <del>
 inoremap <c-_> <c-k>
 
 
@@ -126,6 +126,7 @@ noremap <silent> <leader>tq :tabclose<cr>
 noremap <silent> <leader>tn :tabnext<cr>
 noremap <silent> <leader>tp :tabprev<cr>
 noremap <silent> <leader>to :tabonly<cr>
+noremap <silent> <leader>t<leader> :tabedit %<cr>
 
 
 " 左移 tab
